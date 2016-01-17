@@ -1,0 +1,9 @@
+node_modules/
+app/components/
+app/npm-debug.log
+app/scripts/
+app/styles/
+.sass-cache/
+tmp/
+db/
+.DS_Store

@@ -1,0 +1,22 @@
+{
+  "name": "Sophie Photography",
+  "version": "0.0.1",
+  "homepage": "https://github.com/ethanchiu10/sophie-photography",
+  "authors": [
+    "Ethan Chiu"
+  ],
+  "description": "Sophie's photography portfolio site",
+  "dependencies": {
+  },
+  "keywords": [
+    "gulp",
+    "angular",
+    "browserify"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "app/components"
+  ]
+}

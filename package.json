@@ -1,0 +1,69 @@
+{
+  "name": "sophie-photography",
+  "version": "0.0.1",
+  "dependencies": {
+    "angular": "1.4.8",
+    "angular-animate": "1.4.8",
+    "angular-route": "1.4.8",
+    "angular-swipe": "git+https://github.com/marmorkuchen-net/angular-swipe.git",
+    "angular-touch": "1.4.8",
+    "blast-text": "^2.0.0",
+    "bower": "latest",
+    "browserify": "latest",
+    "browserify-shim": "^3.8.2",
+    "coffee-script": "latest",
+    "color": "^0.10.1",
+    "dateformat": "^1.0.12",
+    "del": "^2.2.0",
+    "express": "latest",
+    "gulp": "latest",
+    "gulp-browserify": "latest",
+    "gulp-clean": "latest",
+    "gulp-coffee": "latest",
+    "gulp-concat": "latest",
+    "gulp-imagemin": "latest",
+    "gulp-jshint": "latest",
+    "gulp-minify-css": "latest",
+    "gulp-minify-html": "latest",
+    "gulp-sass": "latest",
+    "gulp-uglify": "latest",
+    "gulp-util": "latest",
+    "jquery": "^2.1.4",
+    "underscore": "^1.7.0",
+    "vinyl-paths": "^2.1.0"
+  },
+  "devDependencies": {
+    "browserify-shim": "^3.8.2",
+    "coffeeify": "latest",
+    "connect-livereload": "^0.5.3",
+    "gulp-autoprefixer": "latest",
+    "gulp-filter": "^2.0.0",
+    "gulp-livereload": "latest",
+    "gulp-open": "latest",
+    "gulp-plumber": "^0.6.6",
+    "gulp-rename": "latest",
+    "gulp-ruby-sass": "^1.0.0-alpha",
+    "gulp-sass": "^1.3.2",
+    "gulp-sourcemaps": "^1.3.0",
+    "gulp-watch": "latest",
+    "run-sequence": "^1.0.2",
+    "tiny-lr": "latest",
+    "touch": "0.0.3"
+  },
+  "engines": {
+    "node": "latest"
+  },
+  "config": {
+    "server": {
+      "port": 8000
+    }
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "components",
+    "app/components",
+    "test",
+    "tests"
+  ]
+}
