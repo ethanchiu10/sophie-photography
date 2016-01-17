@@ -17,7 +17,7 @@ module.exports = [
         $scope.pictureFilter = @pictureFilter
 
       init: ()->
-        $http.get('/data/pictures.json').then(
+        $http.get('data/pictures.json').then(
           (response)=>
             $scope.pictures = response.data
             # $scope.tags = _.unique _.flatten _.pluck $scope.pictures, 'tags'
