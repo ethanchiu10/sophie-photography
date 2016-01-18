@@ -13,7 +13,7 @@ module.exports = [
         console.log "#### INIT AppCtrl"
         @scope = $scope
         @init()
-        $scope.setFilter = @setFilter
+        $scope.toggleFilter = @toggleFilter
         $scope.pictureFilter = @pictureFilter
 
       init: ()->
@@ -32,8 +32,11 @@ module.exports = [
 
         $scope.filter = $routeParams.id
 
-      setFilter: (tag)->
-        $scope.filter = tag
+      toggleFilter: (tag)->
+        if $scope.filter == tag
+          $scope.filter = null
+        else
+          $scope.filter = tag
         console.log 'filter', $scope.filter
 
       pictureFilter: (pic)->

@@ -17,15 +17,29 @@
 
   <body ng-controller="AppCtrl">
 
-    <h1 class="title" ng-click="filter = null">Sophie Cheung</h1>
-    <h2 class="subtitle">photography</h2>
 
-    <ul class="tags">
-      <li class="tag" ng-repeat="tag in tags" ng-cloak ng-click="setFilter(tag)">{{ tag }}</li>
-      <li class="tag sophie" ng-click="filter = null">sophie</li>
-    </ul>
+    <header ng-class="{'up': filter}">
 
-    <ul class="pictures">
+      <h1 class="title" ng-click="filter = null">Sophie Cheung</h1>
+      <h2 class="subtitle">photography</h2>
+
+      <ul class="tags">
+        <li class="tag"
+            ng-class="{'active': filter == tag}"
+            ng-repeat="tag in tags"
+            ng-cloak
+            ng-click="toggleFilter(tag)">
+          <span>{{ tag }}</span>
+        </li>
+        <li class="tag sophie">
+          <span>sophie</span>
+        </li>
+      </ul>
+
+    </header>
+
+
+    <ul class="pictures" ng-class="{'active': filter}">
       <li class="picture" ng-repeat="picture in pictures | filter:pictureFilter" ng-cloak>
         <img ng-src="images/{{ picture.url }}" />
       </li>
