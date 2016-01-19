@@ -5,45 +5,29 @@
 #######################################################
 
 module.exports = [
-  "$scope", "$http", "$routeParams"
-  ($scope, $http, $routeParams)->
+  "$scope", "$http", "$routeParams", "$location"
+  ($scope, $http, $routeParams, $location)->
     class AppCtrl
 
       constructor: ()->
         console.log "#### INIT AppCtrl"
         @scope = $scope
-        @init()
-        $scope.toggleFilter = @toggleFilter
-        $scope.pictureFilter = @pictureFilter
+        $scope.goto = @goto
+        $scope.tags = [
+          "superstructure"
+          "sails"
+          "subject"
+          "souls"
+          "slop"
+        ]
 
-      init: ()->
-        $http.get('data/pictures.json').then(
-          (response)=>
-            $scope.pictures = response.data
-            # $scope.tags = _.unique _.flatten _.pluck $scope.pictures, 'tags'
-            $scope.tags = [
-              "superstructure"
-              "sails"
-              "subject"
-              "souls"
-              "slop"
-            ]
-        )
+        $scope.$on '$routeChangeSuccess', ( evt, currRoute, prevRoute )=>
+        #   $scope.path = $routeParams.id
+          $scope.path = currRoute?.$$route?.originalPath
+          console.log "AppCtrl.scope.path", $scope.path
 
-        $scope.filter = $routeParams.id
-
-      toggleFilter: (tag)->
-        if $scope.filter == tag
-          $scope.filter = null
-        else
-          $scope.filter = tag
-        console.log 'filter', $scope.filter
-
-      pictureFilter: (pic)->
-        return true if !$scope.filter?
-        pic.tags.indexOf($scope.filter) >= 0
-
-
+      goto: (path)->
+        $location.path "/#{path}"
 
     window.AppCtrl = new AppCtrl()
 ]

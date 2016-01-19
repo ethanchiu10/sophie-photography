@@ -18,8 +18,8 @@ module.exports = [
           (response)=>
             @pictures = response.data
             @tags = _.unique _.flatten _.pluck @pictures, 'tags'
-            console.log "Pictures", @pictures
-            console.log "Tags", @tags
+            console.log "All Pictures", @pictures
+            # console.log "Tags", @tags
         )
 
 

@@ -11,6 +11,7 @@
     <title>Sophie Cheung Photography</title>
     <link rel="stylesheet" href="styles/main.css"/>
     <link href="images/icon.png" rel="icon" type="image/png">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,300' rel='stylesheet' type='text/css'>
   </head>
 
 
@@ -18,34 +19,35 @@
   <body ng-controller="AppCtrl">
 
 
-    <header ng-class="{'up': filter}">
 
-      <h1 class="title" ng-click="filter = null">Sophie Cheung</h1>
-      <h2 class="subtitle">photography</h2>
+    <header>
 
-      <ul class="tags">
+      <div class="bg" ng-class="{'up': path != '/'}"></div>
+
+      <div class="title" ng-class="{'up': path != '/'}" ng-click="goto('')">
+        <h1>Sophie Cheung</h1>
+        <h2>photography {{ filter }}</h2>
+      </div>
+
+      <ul class="tags" ng-class="{'up': path != '/'}">
         <li class="tag"
-            ng-class="{'active': filter == tag}"
+            ng-class="{'active': path == tag}"
             ng-repeat="tag in tags"
             ng-cloak
-            ng-click="toggleFilter(tag)">
+            ng-click="goto(tag)">
           <span>{{ tag }}</span>
         </li>
-        <li class="tag sophie">
+        <li class="tag sophie" ng-click="goto('contact')">
           <span>sophie</span>
         </li>
       </ul>
 
     </header>
 
-
-    <ul class="pictures" ng-class="{'active': filter}">
-      <li class="picture" ng-repeat="picture in pictures | filter:pictureFilter" ng-cloak>
-        <img ng-src="images/{{ picture.url }}" />
-      </li>
-    </ul>
+    <div ng-view class="view-animate"></div>
 
     <script src="scripts/bundle.js"></script>
+
   </body>
 
 

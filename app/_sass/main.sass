@@ -38,6 +38,8 @@ body
   color: $cl-main
   text-align: center
 
+  overflow-y: scroll
+
 p
   margin: 0
 
@@ -47,115 +49,12 @@ h1, h2, h3, h4
 
 
 
-header
-  position: absolute
-  width: 100%
-  height: 556px
-  top: 50%
-  margin-top: -278px
-  transition: all 0.5s ease 0s
-
-  &.up
-    top: 0
-    margin-top: 0
-
-
-.title
-  margin: 160px auto 40px
-  text-transform: uppercase
-
-.subtitle
-  text-decoration: lowercase
-  font-weight: 100
-
-
-.tags
-  margin: 130px auto
-
-  .tag
-    display: inline-block
-    text-align: center
-    margin: 0px 40px
-    text-transform: uppercase
-    cursor: pointer
-    letter-spacing: 0px
-    transition: all 0.5s ease 0s
-
-    span
-      display: block
-      margin: 4px auto 2px
-
-    &.sophie
-      text-transform: lowercase
-
-    &:after, &:before
-      content: ''
-      display: block
-      height: 2px
-      width: 100%
-      margin-left: -2px
-      background: black
-      transform-origin: 50%
-      transform: scaleX(0)
-      transition: transform 0.5s ease 0s
-
-
-    &:hover, &.active
-      letter-spacing: 4px
-
-      &:after
-        transform: scaleX(1)
-
-    &.active
-      &:before
-        transform: scaleX(1)
-
-
-
-
-.pictures
-
-  position: absolute
-  top: 100%
-  width: 100%
-  transition: all 0.5s ease 0s
-
-  &.active
-    top: 440px
-
-  .picture
-    margin: 100px auto
-    width: 800px
-
-    img
-      width: 100%
-      height: auto
-
-    // &.ng-enter, &.ng-leave
-    //   transition: all 1s ease 0s
-
-    // &.ng-enter
-    //   opacity: 0
-    //   transform: translateY(100px)
-
-    //   &.ng-enter-active
-    //     opacity: 1
-    //     transform: none
-
-    // &.ng-leave
-    //   opacity: 1
-    //   transform: none
-
-    //   &.ng-leave-active
-    //     opacity: 0
-    //     transform: translateY(100px)
-
-
-
 
 // *************************************
 // IMPORT
 // *************************************
-
+@import "header"
+@import "pictures"
+@import "contact"
 
 
