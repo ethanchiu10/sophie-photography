@@ -23,7 +23,7 @@ module.exports = [
 
         $scope.$on '$routeChangeSuccess', ( evt, currRoute, prevRoute )=>
         #   $scope.path = $routeParams.id
-          $scope.path = currRoute?.$$route?.originalPath
+          $scope.path = currRoute?.$$route?.originalPath?.replace("/", "")
           console.log "AppCtrl.scope.path", $scope.path
 
       goto: (path)->

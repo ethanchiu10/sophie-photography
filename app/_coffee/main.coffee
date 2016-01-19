@@ -11,7 +11,7 @@
 window.$ = require 'jquery'
 window._ = require 'underscore'
 
-require 'angular'
+# require 'angular'
 require 'angular-route'
 require 'angular-animate'
 

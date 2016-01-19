@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="styles/main.css"/>
     <link href="images/icon.png" rel="icon" type="image/png">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,300' rel='stylesheet' type='text/css'>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
   </head>
 
 
@@ -20,16 +21,16 @@
 
 
 
-    <header>
+    <header ng-class="{'hide': path != ''}">
 
-      <div class="bg" ng-class="{'up': path != '/'}"></div>
+      <div class="bg" ng-class="{'up': path != ''}"></div>
 
-      <div class="title" ng-class="{'up': path != '/'}" ng-click="goto('')">
+      <div class="title" ng-class="{'up': path != ''}" ng-click="goto('')">
         <h1>Sophie Cheung</h1>
         <h2>photography</h2>
       </div>
 
-      <ul class="tags" ng-class="{'up': path != '/'}">
+      <ul class="tags" ng-class="{'up': path != ''}">
         <li class="tag"
             ng-class="{'active': path == tag}"
             ng-repeat="tag in tags"
@@ -42,6 +43,14 @@
       </ul>
 
     </header>
+
+    <div class="mobile-home-bar" ng-click="goto('')" ng-class="{'show': path != ''}">
+      <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+    </div>
 
     <div ng-view class="view-animate"></div>
 

@@ -8,6 +8,7 @@
   margin-top: 470px
   width: 100%
   transition: all 0.5s ease 0s
+  font-size: 0px
 
   .picture
     margin: 100px auto
@@ -39,3 +40,17 @@
     &.ng-leave-active
       transform: translateY(200px)
       opacity: 0
+
+
+
+@media screen and (max-width: 900px)
+  .pictures
+    margin-top: 0px
+    word-spacing: 0px
+
+
+    .picture
+      margin: 0px auto 20px
+
+      &:last-child
+        margin-bottom: 0px
