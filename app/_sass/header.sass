@@ -76,7 +76,7 @@ header
 
     .tag
       text-align: center
-      margin: 0px 50px
+      margin: 0px 42px
       text-transform: uppercase
       cursor: pointer
       letter-spacing: 0px
@@ -129,6 +129,7 @@ header
   opacity: 0
   pointer-events: none
   transition: all 0.5s ease 0s
+  display: none
 
   ul
     display: inline-block
@@ -182,16 +183,12 @@ header
         top: calc(100% - #{$height})
         transform: none
 
-    .mobile-home-btn
-      display: block
-
-
-      .tag
-        margin: 6px auto
-
 
     &.hide
       transform: translateY(-100%)
+
+  .mobile-home-bar
+    display: block
 
 
 
