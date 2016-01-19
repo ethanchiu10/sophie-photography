@@ -26,16 +26,15 @@
 
       <div class="title" ng-class="{'up': path != '/'}" ng-click="goto('')">
         <h1>Sophie Cheung</h1>
-        <h2>photography {{ filter }}</h2>
+        <h2>photography</h2>
       </div>
 
       <ul class="tags" ng-class="{'up': path != '/'}">
         <li class="tag"
             ng-class="{'active': path == tag}"
             ng-repeat="tag in tags"
-            ng-cloak
             ng-click="goto(tag)">
-          <span>{{ tag }}</span>
+          <span ng-cloak>{{ tag }}</span>
         </li>
         <li class="tag sophie" ng-click="goto('contact')">
           <span>sophie</span>
