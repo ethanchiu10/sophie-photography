@@ -25,6 +25,7 @@ module.exports = [
         #   $scope.path = $routeParams.id
           $scope.path = currRoute?.$$route?.originalPath?.replace("/", "")
           console.log "AppCtrl.scope.path", $scope.path
+          ga 'send', 'pageview', $location.path()
 
       goto: (path)->
         $location.path "/#{path}"
